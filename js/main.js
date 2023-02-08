@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
 	"use strict";
 
@@ -7,18 +7,18 @@
 		once: true
 	});
 
-	var slider = function(){
+	var slider = function () {
 
 		var heroSlider = document.querySelectorAll('.hero-slider');
 
-		if ( heroSlider.length > 0 ) {
+		if (heroSlider.length > 0) {
 			var heroSlider = tns({
 				container: '.hero-slider',
 				items: 1,
 				mode: 'carousel',
 				autoplay: true,
-			  animateIn: 'tns-fadeIn',
-		    animateOut: 'tns-fadeOut',
+				animateIn: 'tns-fadeIn',
+				animateOut: 'tns-fadeOut',
 				speed: 700,
 				nav: true,
 				controls: false,
@@ -29,30 +29,30 @@
 
 		var carouselSlider = document.querySelectorAll('.carousel-testimony');
 
-		if ( carouselSlider.length > 0 ) {
+		if (carouselSlider.length > 0) {
 
 			var testimonySlider = tns({
 				container: '.carousel-testimony',
 				items: 1,
 				mode: 'carousel',
 				autoplay: true,
-			  animateIn: 'tns-fadeIn',
-		    animateOut: 'tns-fadeOut',
+				animateIn: 'tns-fadeIn',
+				animateOut: 'tns-fadeOut',
 				speed: 700,
 				nav: true,
 				gutter: 20,
 				controls: false,
 				autoplayButtonOutput: false,
-				responsive:{
-					0:{
+				responsive: {
+					0: {
 						items: 1,
 						gutter: 0
 					},
-					600:{
+					600: {
 						items: 2,
 						gutter: 20
 					},
-					1000:{
+					1000: {
 						items: 3,
 						gutter: 20
 					}
@@ -63,15 +63,15 @@
 
 	}
 	slider();
-	
 
 
-	var counter = function() {
+
+	var counter = function () {
 		function countUp(elem) {
 			var current = elem.innerHTML;
 
 
-			var timeIntervalBeforeIncrement = 2000/elem.getAttribute("data-count")
+			var timeIntervalBeforeIncrement = 2000 / elem.getAttribute("data-count")
 
 
 			var interval = setInterval(increase, timeIntervalBeforeIncrement);
@@ -108,11 +108,11 @@
 			var element = elements[i];
 			var positionFromTop = elements[i].getBoundingClientRect().top;
 			if (positionFromTop - windowHeight <= 0) {
-				if( !element.classList.contains('viewed') ) {
+				if (!element.classList.contains('viewed')) {
 					element.classList.add('viewed');
-					counter();	
+					counter();
 				} else {
-					if ( element.classList.contains('viewed') ) {
+					if (element.classList.contains('viewed')) {
 
 					}
 				}
@@ -129,9 +129,26 @@
 
 
 	const lightbox = GLightbox({
-	  touchNavigation: true,
-	  loop: true,
-	  autoplayVideos: true
+		touchNavigation: true,
+		loop: true,
+		autoplayVideos: true
+	});
+
+	//sticky header on scroll up after scrolling down
+	var lastScroll = 0;
+	var isScrolled = false;
+	window.addEventListener("scroll", function () {
+		var topHeader = document.querySelector(".topheader");
+		var currentScroll =
+			window.pageYOffset ||
+			document.documentElement.scrollTop ||
+			document.body.scrollTop ||
+			0;
+		// var scrollDirection = currentScroll < lastScroll;
+		var scrollDirection = currentScroll;
+		var shouldToggle = isScrolled && scrollDirection;
+		isScrolled = currentScroll > 100;
+		topHeader.classList.toggle("active-topheader", shouldToggle);
+		lastScroll = currentScroll;
 	});
 })()
-
