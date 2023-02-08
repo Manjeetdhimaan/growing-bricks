@@ -3237,4 +3237,139 @@ color: #ffff }
       transform: scale(1.0);
       transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
   }
+
+  #myBtn {
+
+    /* display: none; */
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    max-width:100px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    /* background-color: #FFA500; */
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+#myBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+}
+
+#myBtn:focus {
+    background-color: #D88408;
+    /* Add a dark-grey background on hover */
+}
+button[title]{
+    color:red;
+    background-color: #D88408;
+    border: 3px solid green;
+    
+}
+
+@media screen and (max-width: 480px) {
+    #myBtn {
+        max-width: 100px;
+        right: 15px;
+        bottom: 10px;
+    }
+  }
+
+  
+#myDIV {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  display: none;
+}
+
+#serverErrors {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%,-50px);
+  bottom: 10%;
+  background-color: rgba(246, 166, 166, 0.648);
+  padding: 4px 16px;
+  color: red;
+  border-radius: 3px;
+  border: 1px solid red;
+  opacity: 0;
+  /* transform: translate(0, -50px); */
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+#serverSuccess {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%,-50px);
+  bottom: 10%;
+  background-color: rgba(169, 246, 166, 0.648);
+  padding: 4px 16px;
+  color: green;
+  border-radius: 3px;
+  border: 1px solid green;
+  opacity: 0;
+  /* transform: translate(0, -50px); */
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.bi-backspace {
+  padding: 0 0 0 8px;
+  cursor: pointer;
+}
+
+.loading {
+  height: 0;
+  width: 0;
+  padding: 15px;
+  border: 6px solid #ccc;
+  border-right-color: rgb(148, 100, 100);
+  border-radius: 22px;
+  animation: rotate 1s infinite linear;
+  -webkit-animation: rotate 1s infinite linear;
+  /* left, top and position just for the demo! */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
+@-webkit-keyframes rotate {
+
+  /* 100% keyframe for  clockwise. 
+use 0% instead for anticlockwise */
+  100% {
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+
+  /* 100% keyframe for  clockwise. 
+use 0% instead for anticlockwise */
+  100% {
+      -webkit-transform: rotate(360deg);
+  }
+}
     
