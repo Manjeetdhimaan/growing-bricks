@@ -1514,6 +1514,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5,
 
 .top-wrap {
   background: #06112a; }
+  .nthLinks {
+    display: block;
+  }
 
 .topper {
   font-size: 15px;
@@ -1575,7 +1578,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5,
       color: #000000 !important; }
     @media (max-width: 767.98px) {
       .ftco-navbar-light .navbar-brand {
-        color: #fff; } }
+        color: #fff; }
+      .nthLinks {
+        display: none!important;
+      }
+      .top-wrap {
+        text-align: center;
+      }
+      .tns-nav {
+        display: none;
+      }
+     }
   @media (max-width: 991.98px) {
     .ftco-navbar-light .navbar-nav {
       padding-top: 20px;
